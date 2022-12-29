@@ -54,6 +54,18 @@ $(() => {
         case "Unique":
           $(this).addClass("border-unique");
           break;
+
+        case "Legendary":
+          $(this).addClass("border-legendary");
+          break;
+
+        case "Epic":
+          $(this).addClass("border-epic");
+          break;
+
+        case "Rare":
+          $(this).addClass("border-rare");
+          break;
       }
     }).trigger("change");
   });
