@@ -41,4 +41,21 @@ $(() => {
 
   $("#calcBtn").on("click", calcHealth);
 
+
+  $("#helmet, #shoulders, #arms, #body, #legs").each(function () {
+    $(this).on("change", function () {
+      const rarity = $(this).children("option:selected").text();
+      $(this).removeClass("border-common border-rare border-epic border-legendary border-unique border-mythic");
+      switch (rarity) {
+        case "Mythic":
+          $(this).addClass("border-mythic");
+          break;
+
+        case "Unique":
+          $(this).addClass("border-unique");
+          break;
+      }
+    }).trigger("change");
+  });
+
 });

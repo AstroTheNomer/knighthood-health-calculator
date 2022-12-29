@@ -9,6 +9,7 @@
   <title>Health Calculator</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"
     defer></script>
@@ -34,68 +35,93 @@
     </div>
     <div class="row py-3">
       <div class="col-12">
-        <h4>Equipment Rarity</h4>
+        <h4>Equipment Rarity:</h4>
       </div>
       <div class="col-6 col-sm-4 col-md">
-        <label for="helmet" class="form-label">Helmet: </label>
+        <label for="helmet" class="form-label">
+          <img src="./media/equipment/helmet.png" alt="Helmet armor piece" />
+          Helmet: </label>
         <select class="form-select" id="helmet">
           <option value="42828">Mythic</option>
           <option value="37976">Unique</option>
+          <option value="33184">Legendary</option>
         </select>
       </div>
       <div class="col-6 col-sm-4 col-md">
-        <label for="shoulders" class="form-label">Shoulders: </label>
+        <label for="shoulders" class="form-label">
+          <img src="./media/equipment/shoulders.png" alt="Shoulders armor piece" />
+          Shoulders: </label>
         <select class="form-select" id="shoulders">
           <option value="25697">Mythic</option>
           <option value="22786">Unique</option>
+          <option value="19910">Legendary</option>
         </select>
       </div>
       <div class="col-6 col-sm-4 col-md">
-        <label for="arms" class="form-label">Arms: </label>
+        <label for="arms" class="form-label">
+          <img src="./media/equipment/arms.png" alt="Arms armor piece" />
+          Arms: </label>
         <select class="form-select" id="arms">
           <option value="17131">Mythic</option>
           <option value="15190">Unique</option>
+          <option value="">Legendary</option>
         </select>
       </div>
       <div class="col-6 col-sm-4 col-md">
-        <label for="body" class="form-label">Body: </label>
+        <label for="body" class="form-label">
+          <img src="./media/equipment/body.png" alt="Body armor piece" />
+          Body: </label>
         <select class="form-select" id="body">
           <option value="51394">Mythic</option>
           <option value="45571">Unique</option>
+          <option value="39821">Legendary</option>
         </select>
       </div>
       <div class="col-6 col-sm-4 col-md">
-        <label for="legs" class="form-label">Legs: </label>
+        <label for="legs" class="form-label">
+          <img src="./media/equipment/legs.png" alt="Legs armor piece" />
+          Legs: </label>
         <select class="form-select" id="legs">
           <option value="34262">Mythic</option>
           <option value="30381">Unique</option>
+          <option value="26547">Legendary</option>
         </select>
       </div>
     </div>
 
     <div class="row py-3">
       <div class="col-12">
-        <h4>Charm Amount</h4>
+        <h4>Charm Amount:</h4>
       </div>
       <div class="col-6 col-sm-4 col-md">
-        <label for="common" class="form-label">Common: </label>
-        <input class="form-control" type="number" min="0" id="common" />
+        <label for="common" class="form-label">
+          <img src="./media/charms/defence-common.png" alt="Common defence charm" />
+          Common: </label>
+        <input class="form-control border-common" type="number" min="0" max="25" id="common" />
       </div>
       <div class="col-6 col-sm-4 col-md">
-        <label for="rare" class="form-label">Rare: </label>
-        <input class="form-control" type="number" min="0" id="rare" />
+        <label for="rare" class="form-label">
+          <img src="./media/charms/defence-rare.png" alt="Rare defence charm" />
+          Rare: </label>
+        <input class="form-control border-rare" type="number" min="0" max="25" id="rare" />
       </div>
       <div class="col-6 col-sm-4 col-md">
-        <label for="epic" class="form-label">Epic: </label>
-        <input class="form-control" type="number" min="0" id="epic" />
+        <label for="epic" class="form-label">
+          <img src="./media/charms/defence-epic.png" alt="Epic defence charm" />
+          Epic: </label>
+        <input class="form-control border-epic" type="number" min="0" max="25" id="epic" />
       </div>
       <div class="col-6 col-sm-4 col-md">
-        <label for="legendary" class="form-label">Legendary: </label>
-        <input class="form-control" type="number" min="0" id="legendary" />
+        <label for="legendary" class="form-label">
+          <img src="./media/charms/defence-legendary.png" alt="Legendary defence charm" />
+          Legendary: </label>
+        <input class="form-control border-legendary" type="number" min="0" max="25" id="legendary" />
       </div>
       <div class="col-6 col-sm-4 col-md">
-        <label for="unique" class="form-label">Unique: </label>
-        <input class="form-control" type="number" min="0" id="unique" />
+        <label for="unique" class="form-label">
+          <img src="./media/charms/defence-unique.png" alt="Unique defence charm" />
+          Unique: </label>
+        <input class="form-control border-unique" type="number" min="0" max="25" id="unique" />
       </div>
     </div>
     <div class="row py-3">
