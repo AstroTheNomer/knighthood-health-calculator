@@ -1,5 +1,3 @@
-const GAUNTLET_HEALTH_BONUS = 1.20;
-
 function getTotalCharms() {
   const common = +$("#common").val();
   const rare = +$("#rare").val();
@@ -28,18 +26,20 @@ function getBaseArmor() {
   return baseArmor;
 }
 
-function getTotalHealth(totalArmor, totalCharms) {
+function getTotalHealth(totalArmor, totalCharms, level) {
+  const gauntletHealthBonus = +$("#gauntletBonus").val();
   const totalArmorCharms = +((totalArmor / getBaseArmor()) - 1).toFixed(2);
-  baseHealth = getBaseHealthPerLevel();
+  baseHealth = getBaseHealthPerLevel(level);
   let totalHealthCharms = +(totalCharms - totalArmorCharms).toFixed(2);
-  // assume upgraded gauntlet => 120% health bonus
-  const totalHealth = Math.floor(baseHealth * (1 + GAUNTLET_HEALTH_BONUS + totalHealthCharms));
+  // assume upgraded gauntlet
+  const totalHealth = Math.floor(baseHealth * (1 + gauntletHealthBonus + totalHealthCharms));
   return totalHealth;
 }
 
 function calcHealth() {
-  const totalArmor = $("#totalArmor").val();
+  const knightLevel = +$("#knightLevel").val();
+  const totalArmor = +$("#totalArmor").val();
   const totalCharms = getTotalCharms();
-  const totalHealth = getTotalHealth(totalArmor, totalCharms);
+  const totalHealth = getTotalHealth(totalArmor, totalCharms, knightLevel);
   return totalHealth;
 }

@@ -91,38 +91,38 @@ function getArmorPieceHP(type, rarity, level) {
 
     switch (true) {
       case i <= 10:
-        multiplier = 1;
+        multiplier = 2 ** 0;
         break;
 
       case i <= 20:
-        multiplier = 2;
+        multiplier = 2 ** 1;
         break;
 
       case i <= 30:
-        multiplier = 4;
+        multiplier = 2 ** 2;
         break;
 
       case i <= 40:
-        multiplier = 8;
+        multiplier = 2 ** 3;
         break;
 
       case i <= 45:
-        multiplier = 16;
+        multiplier = 2 ** 4;
         break;
 
       case i <= 50:
-        multiplier = 32;
+        multiplier = 2 ** 5;
         break;
 
       case i <= 55:
-        multiplier = 64;
+        multiplier = 2 ** 6;
         break;
 
       case i <= 60:
-        multiplier = 128;
+        multiplier = 2 ** 7;
         break;
     }
     totalArmor += (difference * multiplier);
   }
-  return (totalArmor); // round
+  return (totalArmor);
 }

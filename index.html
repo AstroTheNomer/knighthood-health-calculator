@@ -24,16 +24,27 @@
 <body>
   <div class="container py-5">
     <h1>Health Calculator</h1>
-    <p class="lead">All calculations based on a level 60 knight, and a gauntlet with a fully upgraded health
-      node
+    <p class="lead">All calculations are based on a gauntlet with a fully upgraded health node, meaning maximum health
+      possible
     </p>
     <div class="row py-3">
-      <div class="col">
-        <label for="totalArmor" class="form-label">
-          <h4>Total armor:
-          </h4>
-        </label>
-        <input class="form-control form-control-lg" type="number" id="totalArmor" />
+      <div class="col-12">
+        <h4>Knight Information:</h4>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="totalArmor" class="form-label">Total armor: </label>
+        <input class="form-control form-control-lg" type="number" id="totalArmor" min="0" />
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="knightLevel" class="form-label">Knight Level: </label>
+        <input class="form-control form-control-lg" type="number" id="knightLevel" min="1" max="60" value="60" />
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="gauntletBonus" class="form-label">Gauntlet: </label>
+        <select class="form-select form-select-lg" id="gauntletBonus">
+          <option value="0.30">Knight's Gauntlet</option>
+          <option value="1.20" selected>Other Gauntlet</option>
+        </select>
       </div>
     </div>
     <div class="row py-3">
