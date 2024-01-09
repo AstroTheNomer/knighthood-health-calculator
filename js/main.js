@@ -1,7 +1,7 @@
 $(() => {
 
   $("#calcBtn").on("click", function () {
-    $("#result").val(calcHealth());
+    $("#result").val(calcHealth().join(" – "));
   });
 
 

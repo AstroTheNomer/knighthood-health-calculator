@@ -8,40 +8,18 @@ function getBaseHealthPerLevel(level) {
 
   for (let i = startLevel + 1; i <= level; i++) {
     let multiplier;
+    let factor;
 
-    switch (true) {
-      case i <= 10:
-        multiplier = 2 ** 0;
-        break;
-
-      case i <= 20:
-        multiplier = 2 ** 1;
-        break;
-
-      case i <= 30:
-        multiplier = 2 ** 2;
-        break;
-
-      case i <= 40:
-        multiplier = 2 ** 3;
-        break;
-
-      case i <= 45:
-        multiplier = 2 ** 4;
-        break;
-
-      case i <= 50:
-        multiplier = 2 ** 5;
-        break;
-
-      case i <= 55:
-        multiplier = 2 ** 6;
-        break;
-
-      case i <= 60:
-        multiplier = 2 ** 7;
-        break;
+    if (i <= 0) {
+      return 0
     }
+    else if (i <= 40) {
+      factor = Math.floor((i - 1) / 10)
+    }
+    else {
+      factor = Math.floor((i - 41) / 5) + 4
+    }
+    multiplier = 2 ** factor
     healthPerLevel += (HEALTH_DIFFERENCE * multiplier);
   }
   return (healthPerLevel);

@@ -7,9 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <title>Health Calculator</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="./style.css" />
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"
     defer></script>
@@ -24,27 +25,20 @@
 <body>
   <div class="container py-5">
     <h1>Health Calculator</h1>
-    <p class="lead">All calculations are based on a gauntlet with a fully upgraded health node, meaning maximum health
-      possible
+    <p class="lead">
+      Use this to determine your opponent's total health in PvP matches!
     </p>
     <div class="row py-3">
       <div class="col-12">
         <h4>Knight Information:</h4>
       </div>
-      <div class="col-12 col-sm-6 col-md-4">
+      <div class="col-12 col-sm-6">
         <label for="totalArmor" class="form-label">Total armor: </label>
         <input class="form-control form-control-lg" type="number" id="totalArmor" min="0" />
       </div>
-      <div class="col-12 col-sm-6 col-md-4">
+      <div class="col-12 col-sm-6">
         <label for="knightLevel" class="form-label">Knight Level: </label>
         <input class="form-control form-control-lg" type="number" id="knightLevel" min="1" max="60" value="60" />
-      </div>
-      <div class="col-12 col-sm-6 col-md-4">
-        <label for="gauntletBonus" class="form-label">Gauntlet: </label>
-        <select class="form-select form-select-lg" id="gauntletBonus">
-          <option value="0.30">Knight's Gauntlet</option>
-          <option value="1.20" selected>Other Gauntlet</option>
-        </select>
       </div>
     </div>
     <div class="row py-3">
@@ -186,10 +180,10 @@
       </div>
     </div>
     <div class="row py-3">
-      <div class="col">
+      <div class="col-12 col-sm-6">
         <input readonly class="form-control border-primary form-control-lg" id="result" />
       </div>
-      <div class="col">
+      <div class="col-12 col-sm-6">
         <button class="btn btn-primary btn-lg w-100" id="calcBtn">Calculate</button>
       </div>
     </div>
