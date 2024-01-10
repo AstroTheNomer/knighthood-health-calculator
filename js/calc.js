@@ -5,7 +5,7 @@ function getTotalCharms() {
   const legendary = +$("#legendary").val();
   const unique = +$("#unique").val();
 
-  const totalCharms = +((common * 10 + rare * 20 + epic * 30 + legendary * 40 + unique * 50) / 100).toFixed(2);
+  const totalCharms = (common * 10 + rare * 20 + epic * 30 + legendary * 40 + unique * 50);
   return totalCharms;
 }
 
@@ -27,19 +27,18 @@ function getBaseArmor() {
 }
 
 function getTotalHealth(totalArmor, totalCharms, level) {
-  const gauntletHealthBonus = +$("#gauntletBonus").val();
   const base_armor = getBaseArmor();
   if (totalArmor < base_armor) {
     // totalArmor wrong
     totalArmor = base_armor
     $("#totalArmor").val(totalArmor)
   }
-  const totalArmorCharms = +(totalArmor / getBaseArmor()) * 100
-  baseHealth = getBaseHealthPerLevel(level);
-  let totalHealthCharms = (totalCharms + 100 - Math.floor(totalArmorCharms)) / 100;
+  const totalArmorCharms = +(totalArmor / base_armor) * 100
+  let baseHealth = getBaseHealthPerLevel(level);
+  let totalHealthCharms = +(totalCharms + 100 - Math.floor(totalArmorCharms))
   // assume upgraded gauntlet
-  const totalHealthMin = Math.floor(baseHealth * (1 + 0.3 + totalHealthCharms));
-  const totalHealthMax = Math.floor(baseHealth * (1 + 1.2 + totalHealthCharms));
+  const totalHealthMin = Math.floor(baseHealth * (1 + 0.3 + +(totalHealthCharms / 100).toFixed(2)));
+  const totalHealthMax = Math.floor(baseHealth * (1 + 1.2 + +(totalHealthCharms / 100).toFixed(2)));
   return [totalHealthMin, totalHealthMax];
 }
 
